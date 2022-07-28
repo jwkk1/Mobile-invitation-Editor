@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import AuthService from "./firebase/auth_service";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const authService = new AuthService();
 root.render(
   <React.StrictMode>
-    <App />
+    <App authService={authService} />
   </React.StrictMode>
 );
 

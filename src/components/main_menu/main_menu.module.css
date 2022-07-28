@@ -1,0 +1,9 @@
+.logoutbtn {
+  position: absolute;
+  top: 2em;
+  right: 3em;
+  border: 0;
+  padding: 0.5em;
+  background-color: paleturquoise;
+  cursor: pointer;
+}
