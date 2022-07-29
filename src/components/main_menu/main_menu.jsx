@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
+import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import Main_header from "./main_header";
 import styles from "./main_menu.module.css";
 
 const Main_menu = ({ authService }) => {
   const navigate = useNavigate();
+
   const [cards, setCard] = useState({
     1: {
+      date: "09/01",
       maleName: "김진우",
       pemailName: "정누리",
       gallary: ["url", "url"],
@@ -18,8 +21,9 @@ const Main_menu = ({ authService }) => {
       pemaleBank: "1002-222",
     },
     2: {
-      maleName: "김진우",
-      pemailName: "정누리",
+      date: "09/01",
+      maleName: "김진우2",
+      pemailName: "정누리2",
       gallary: ["url", "url"],
       address: "약현",
       malePhone: "010-2900-1006",
@@ -28,8 +32,9 @@ const Main_menu = ({ authService }) => {
       pemaleBank: "1002-222",
     },
     3: {
-      maleName: "김진우",
-      pemailName: "정누리",
+      date: "09/01",
+      maleName: "김진우3",
+      pemailName: "정누리3",
       gallary: ["url", "url"],
       address: "약현",
       malePhone: "010-2900-1006",

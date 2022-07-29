@@ -3,9 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import AuthService from "./firebase/auth_service";
+import Kakao from "./firebase/kakao";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const authService = new AuthService();
+const kakao = new Kakao();
+kakao.login();
 root.render(
   <React.StrictMode>
     <App authService={authService} />

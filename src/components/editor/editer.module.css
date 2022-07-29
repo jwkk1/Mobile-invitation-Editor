@@ -1,0 +1,39 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editor {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  max-width: 30em;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.mainTitle {
+  display: flex;
+  text-align: left;
+  width: 6em;
+  margin: 0.5em 2em;
+}
+
+.list {
+  margin: 0.7em 0em;
+}
+.textInput {
+  width: 10em;
+}
+
+.textInput:focus {
+  outline: none;
+}
