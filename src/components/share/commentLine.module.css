@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 90%;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.name {
+  flex: 1;
+}
+
+.value {
+  flex: 3;
+}

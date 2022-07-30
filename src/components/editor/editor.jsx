@@ -2,37 +2,22 @@ import React, { useRef } from "react";
 import styles from "./editer.module.css";
 import { useLocation, useNavigate } from "react-router";
 import Main_header from "../main_menu/main_header";
+import { upload } from "@testing-library/user-event/dist/upload";
 
-const Editor = (props) => {
-  const location = useLocation();
+const Editor = ({ imageUploader }) => {
   const navigate = useNavigate();
-  const card = location.state.cards;
-  // 상위 components props.location.state에 있는 card정보 가져오기
-  const {
-    date,
-    maleName,
-    feMaleName,
-    address,
-    gallary,
-    maleBank,
-    malePhone,
-    femaleBank,
-    femalePhone,
-  } = card;
 
   const dateRef = useRef();
   const maleNameRef = useRef();
   const addressRef = useRef();
-  const gallaryRef = useRef();
   const maleBankRef = useRef();
   const malePhoneRef = useRef();
   const femaleNameRef = useRef();
   const femaleBankRef = useRef();
   const femalePhoneRef = useRef();
-  const mainPhotoRef = useRef();
-  const onChange = () => {
-    //  이미지 업로드, 바꾸기
-  };
+  const gallaryRef = useRef();
+  let mainUrl = "";
+  let subUrl = [];
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -42,16 +27,34 @@ const Editor = (props) => {
       maleName: maleNameRef.current.value || "",
       femaleName: femaleNameRef.current.value || "",
       address: addressRef.current.value || "",
-      gallary: gallaryRef.current.value || "",
+      gallary: subUrl || "",
       maleBank: maleBankRef.current.value || "",
       malePhone: malePhoneRef.current.value || "",
       femaleBank: femaleBankRef.current.value || "",
       femalePhone: femalePhoneRef.current.value || "",
-      mainPhoto: mainPhotoRef.current.value || "",
+      mainPhoto: mainUrl || "",
+      comment: {
+        1: { id: Date.now(), name: "이름", value: "안녕" },
+        2: { id: Date.now(), name: "이1름", value: "안1녕" },
+      },
     };
     navigate("/share", { state: { cards: card } });
     // setFile({ fileName: null, fileURL: null });
     // onAdd(card);
+  };
+
+  const onMainFileChange = async (event) => {
+    const uploaded = await imageUploader.upload(event.target.files[0]);
+    mainUrl = uploaded.url;
+  };
+
+  const onSubFileChange = async (event) => {
+    const length = Object.keys(event.target.files).length;
+    for (let i = 0; i < length; i++) {
+      const uploaded = await imageUploader.upload(event.target.files[i]);
+      subUrl[i] = uploaded.url;
+      console.log(subUrl);
+    }
   };
 
   return (
@@ -73,12 +76,11 @@ const Editor = (props) => {
           <div className={styles.mainTitle}>메인 사진 </div>
           <div>
             <input
-              ref={mainPhotoRef}
               className={styles.input}
               type="file"
               accept="image/*"
               name="file"
-              onChange={onChange}
+              onChange={onMainFileChange}
             />
           </div>
         </div>
@@ -115,7 +117,7 @@ const Editor = (props) => {
           </div>
         </div>
         <div className={styles.info}>
-          <div className={styles.mainTitle}>신랑측 정보 </div>
+          <div className={styles.mainTitle}>신부측 정보 </div>
           <div className={styles.subTitle}>
             <div className={styles.list}>
               <input
@@ -165,15 +167,16 @@ const Editor = (props) => {
           <div>
             <input
               ref={gallaryRef}
+              multiple
               className={styles.input}
               type="file"
               accept="image/*"
               name="file"
-              onChange={onChange}
+              onChange={onSubFileChange}
             />
           </div>
         </div>
-        <button onClick={onSubmit}> asd</button>
+        <button onClick={onSubmit}> 확인 </button>
       </form>
     </section>
   );

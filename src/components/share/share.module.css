@@ -1,3 +1,7 @@
+a {
+  color: black;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -5,10 +9,15 @@ a:active {
   text-decoration: none;
 }
 
+input:focus {
+  outline: none;
+}
+
 .section {
   border: 1px solid black;
   width: 420px;
-  background-color: white;
+  background-color: #f3f3f3;
+  font-family: "Noto Serif KR", serif;
 }
 
 .mainTitle {
@@ -82,11 +91,12 @@ a:active {
 .bankBtn button {
   width: 100%;
   padding: 1em;
-  background-color: white;
+  background-color: inherit;
   border: 0;
   border-radius: 0.5em;
   cursor: pointer;
   transition: all 200ms;
+  font-family: "Noto Serif KR", serif;
 }
 
 .bankBtn button:hover {
@@ -123,6 +133,22 @@ a:active {
   width: 100%;
   transition: all 200ms ease-in;
   border-radius: 0.5em;
+}
+
+.board {
+  text-align: center;
+}
+
+.commentName {
+  width: 30%;
+}
+
+.commentValue {
+  width: 50%;
+}
+
+.commentList {
+  list-style: none;
 }
 
 @media screen and (max-width: 780px) {
