@@ -194,9 +194,23 @@ const Editor = ({ imageUploader, database }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.mainTitle}>갤러리 사진</div>
-          <div></div>
+          <div>
+            <input
+              ref={gallaryRef}
+              multiple
+              className={styles.imginput}
+              type="file"
+              accept="image/*"
+              name="file"
+              onChange={onSubFileChange}
+            />
+          </div>
         </div>
-        <button onClick={onSubmit}> 확인 </button>
+        <div className={styles.btn}>
+          <button className={styles.creatBtn} onClick={onSubmit}>
+            만들기
+          </button>
+        </div>
       </form>
     </section>
   );
