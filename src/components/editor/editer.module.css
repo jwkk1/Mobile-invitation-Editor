@@ -46,8 +46,19 @@
 .list {
   margin: 0.7em 0em;
 }
+
+.input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  margin: 0.5em;
+}
 .textInput {
   width: 10em;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  margin: 0.5em;
 }
 
 .textInput:focus {

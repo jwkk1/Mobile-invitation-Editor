@@ -97,7 +97,7 @@ const Editor = ({ imageUploader, database }) => {
           <div className={styles.mainTitle}>메인 사진 </div>
           <div>
             <input
-              className={styles.input}
+              className={styles.imginput}
               type="file"
               accept="image/*"
               name="file"
@@ -194,17 +194,7 @@ const Editor = ({ imageUploader, database }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.mainTitle}>갤러리 사진</div>
-          <div>
-            <input
-              ref={gallaryRef}
-              multiple
-              className={styles.input}
-              type="file"
-              accept="image/*"
-              name="file"
-              onChange={onSubFileChange}
-            />
-          </div>
+          <div></div>
         </div>
         <button onClick={onSubmit}> 확인 </button>
       </form>

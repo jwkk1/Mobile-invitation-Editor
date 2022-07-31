@@ -141,10 +141,18 @@ input:focus {
 
 .commentName {
   width: 30%;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  margin: 0.5em;
 }
 
 .commentValue {
   width: 50%;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  margin: 0.5em;
 }
 
 .commentList {
