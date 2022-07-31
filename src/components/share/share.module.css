@@ -41,10 +41,6 @@ input:focus {
   transform: rotate(45deg);
 }
 
-.img img {
-  width: 100%;
-}
-
 .info {
   display: flex;
   flex-direction: column;
@@ -77,6 +73,10 @@ input:focus {
   align-items: center;
   width: 80%;
   padding: 0 1em;
+}
+
+.img img {
+  width: 100%;
 }
 
 .bank {

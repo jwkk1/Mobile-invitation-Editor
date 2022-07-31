@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Comment from "./comment";
 
+import ImageSlider from "./imageSlider";
+
 const Share = (props) => {
   const location = useLocation();
   const [card, setCard] = useState(location.state.cards);
@@ -89,9 +91,7 @@ const Share = (props) => {
         <div>{address}</div>
       </div>
       <div className={styles.img}>
-        <img src={gallary[0]} />
-        <img src={gallary[1]} />
-        <img src={gallary[2]} />
+        <ImageSlider img={gallary} />
       </div>
       <div className={styles.info}>
         <img src="./image/flower.png" />
