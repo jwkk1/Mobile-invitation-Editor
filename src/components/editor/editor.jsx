@@ -1,32 +1,36 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./editer.module.css";
 import { useLocation, useNavigate } from "react-router";
 import Main_header from "../main_menu/main_header";
 import { upload } from "@testing-library/user-event/dist/upload";
 
-const Editor = ({ imageUploader }) => {
+const Editor = ({ imageUploader, database }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userId = location.state.user.user;
 
   const dateRef = useRef();
   const maleNameRef = useRef();
-  const addressRef = useRef();
+  const weddingHallAddressRef = useRef();
   const maleBankRef = useRef();
   const malePhoneRef = useRef();
   const femaleNameRef = useRef();
   const femaleBankRef = useRef();
   const femalePhoneRef = useRef();
   const gallaryRef = useRef();
+  const weddingHallNameRef = useRef();
   let mainUrl = "";
   let subUrl = [];
 
   const onSubmit = (event) => {
     event.preventDefault();
     const card = {
-      id: Date.now(),
+      id: userId,
       date: dateRef.current.value || "",
       maleName: maleNameRef.current.value || "",
       femaleName: femaleNameRef.current.value || "",
-      address: addressRef.current.value || "",
+      weddingHallAddress: weddingHallAddressRef.current.value || "",
+      weddingHallName: weddingHallNameRef.current.value || "",
       gallary: subUrl || "",
       maleBank: maleBankRef.current.value || "",
       malePhone: malePhoneRef.current.value || "",
@@ -38,6 +42,7 @@ const Editor = ({ imageUploader }) => {
         2: { id: Date.now(), name: "이1름", value: "안1녕" },
       },
     };
+    database.addCard(userId, card);
     navigate("/share", { state: { cards: card } });
     // setFile({ fileName: null, fileURL: null });
     // onAdd(card);
@@ -153,11 +158,20 @@ const Editor = ({ imageUploader }) => {
           <div className={styles.subTitle}>
             <div className={styles.list}>
               <input
-                ref={addressRef}
+                ref={weddingHallNameRef}
                 className={styles.textInput}
                 type="text"
                 name="address"
-                placeholder="결혼식장 정보"
+                placeholder="결혼식장 이름"
+              ></input>
+            </div>
+            <div className={styles.list}>
+              <input
+                ref={weddingHallAddressRef}
+                className={styles.textInput}
+                type="text"
+                name="address"
+                placeholder="결혼식장 상세주소"
               ></input>
             </div>
           </div>

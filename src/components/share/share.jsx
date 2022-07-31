@@ -4,20 +4,22 @@ import styles from "./share.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Comment from "./comment";
-
 import ImageSlider from "./imageSlider";
+import KakaoMap from "./kakaoMap";
 
-const Share = (props) => {
+const Share = ({ database }) => {
   const location = useLocation();
   const [card, setCard] = useState(location.state.cards);
   console.log(card);
   // 상위 components props.location.state에 있는 card정보 가져오기
   const {
+    id,
     date,
     mainPhoto,
     maleName,
     femaleName,
-    address,
+    weddingHallAddress,
+    weddingHallName,
     gallary,
     maleBank,
     malePhone,
@@ -55,6 +57,7 @@ const Share = (props) => {
       ],
     });
   };
+
   const formRef = useRef();
   const commentNameRef = useRef();
   const commentValueRef = useRef();
@@ -70,6 +73,7 @@ const Share = (props) => {
     };
     formRef.current.reset();
     setCard(commentCard);
+    database.addComment(id, commentCard);
   };
 
   return (
@@ -88,7 +92,7 @@ const Share = (props) => {
       </div>
       <div className={styles.info}>
         <div>{`${year}년 ${month}월 ${day}일`}</div>
-        <div>{address}</div>
+        <div>{weddingHallName}</div>
       </div>
       <div className={styles.img}>
         <ImageSlider img={gallary} />
@@ -153,7 +157,10 @@ const Share = (props) => {
           </div>
         </div>
       </div>
-
+      <div className={styles.info}>
+        <div>{weddingHallName}</div>
+        <KakaoMap address={weddingHallAddress} name={weddingHallName} />
+      </div>
       <div className={styles.info}>
         <div>댓글 남기기</div>
         <form ref={formRef} className={styles.board}>

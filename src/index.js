@@ -5,16 +5,22 @@ import App from "./App";
 import AuthService from "./firebase/auth_service";
 import Kakao from "./firebase/kakao";
 import ImageUploader from "./firebase/img_upload";
+import Database from "./firebase/database";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const authService = new AuthService();
 const kakao = new Kakao();
 const imageUploader = new ImageUploader();
+const database = new Database();
 
 kakao.login();
 root.render(
   <React.StrictMode>
-    <App authService={authService} imageUploader={imageUploader} />
+    <App
+      authService={authService}
+      imageUploader={imageUploader}
+      database={database}
+    />
   </React.StrictMode>
 );
 

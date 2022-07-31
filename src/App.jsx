@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main_menu from "./components/main_menu/main_menu";
 import Editor from "./components/editor/editor";
 import Share from "./components/share/share";
+import { database } from "firebase";
 
-function App({ imageUploader, authService, kakao }) {
+function App({ imageUploader, authService, kakao, database }) {
   return (
     <div className={styles.main}>
       <BrowserRouter>
@@ -17,9 +18,14 @@ function App({ imageUploader, authService, kakao }) {
           />
           <Route
             path="/editor"
-            element={<Editor imageUploader={imageUploader} />}
+            element={
+              <Editor imageUploader={imageUploader} database={database} />
+            }
           />
-          <Route path="/share" element={<Share kakao={kakao} />} />
+          <Route
+            path="/share"
+            element={<Share kakao={kakao} database={database} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

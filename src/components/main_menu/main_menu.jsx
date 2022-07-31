@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, useNavigate } from "react-router-dom";
+import { Route, useLocation, useNavigate } from "react-router-dom";
 import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import Main_header from "./main_header";
@@ -7,6 +7,8 @@ import styles from "./main_menu.module.css";
 
 const Main_menu = ({ authService }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const user = location.state.user;
 
   //   const [cards, setCard] = useState({
   //     1: {
@@ -63,7 +65,7 @@ const Main_menu = ({ authService }) => {
         Logout
       </button>
       <div className={styles.container}>
-        <Preview />
+        <Preview user={user} />
       </div>
     </section>
   );

@@ -8,11 +8,7 @@ const Login = ({ authService }) => {
   const navigate = useNavigate();
 
   const goMainMenu = (userId) => {
-    navigate({
-      pathname: "/main",
-      state: { id: userId },
-    });
-    console.log(userId);
+    navigate("/main", { state: { user: userId } });
   };
 
   const onLogin = () => {
