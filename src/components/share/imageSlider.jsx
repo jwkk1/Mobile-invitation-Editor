@@ -15,13 +15,14 @@ const ImageSlider = ({ img }) => {
 
   return (
     <Slider {...sliderSettings}>
-      {img.map((url) => {
-        return (
-          <div className={styles.imgBox}>
-            <img className={styles.img} src={url} />
-          </div>
-        );
-      })}
+      {img &&
+        Object.keys(img).map((key) => {
+          return (
+            <div className={styles.imgBox}>
+              <img className={styles.img} src={img[key]} />
+            </div>
+          );
+        })}
     </Slider>
   );
 };

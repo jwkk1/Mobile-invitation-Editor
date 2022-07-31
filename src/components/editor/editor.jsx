@@ -1,13 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./editer.module.css";
 import { useLocation, useNavigate } from "react-router";
 import Main_header from "../main_menu/main_header";
-import { upload } from "@testing-library/user-event/dist/upload";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const Editor = ({ imageUploader, database }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const userId = location.state.user.user;
+  const [mainLoading, setMainLoading] = useState(false);
+  const [subLoading, setSubLoading] = useState(false);
+  const [subUrl, setSubUrl] = useState({});
+  const [mainUrl, setMainUrl] = useState("");
 
   const dateRef = useRef();
   const maleNameRef = useRef();
@@ -19,8 +24,6 @@ const Editor = ({ imageUploader, database }) => {
   const femalePhoneRef = useRef();
   const gallaryRef = useRef();
   const weddingHallNameRef = useRef();
-  let mainUrl = "";
-  let subUrl = [];
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +34,7 @@ const Editor = ({ imageUploader, database }) => {
       femaleName: femaleNameRef.current.value || "",
       weddingHallAddress: weddingHallAddressRef.current.value || "",
       weddingHallName: weddingHallNameRef.current.value || "",
-      gallary: subUrl || "",
+      gallary: { ...subUrl } || "",
       maleBank: maleBankRef.current.value || "",
       malePhone: malePhoneRef.current.value || "",
       femaleBank: femaleBankRef.current.value || "",
@@ -39,32 +42,45 @@ const Editor = ({ imageUploader, database }) => {
       mainPhoto: mainUrl || "",
       comment: {
         1: { id: Date.now(), name: "이름", value: "안녕" },
-        2: { id: Date.now(), name: "이1름", value: "안1녕" },
       },
     };
+    console.log(card);
     database.addCard(userId, card);
-    navigate("/share", { state: { cards: card } });
+
+    navigate(`/${userId}/share`, { state: { cards: card } });
     // setFile({ fileName: null, fileURL: null });
     // onAdd(card);
   };
 
   const onMainFileChange = async (event) => {
+    setMainLoading(true);
     const uploaded = await imageUploader.upload(event.target.files[0]);
-    mainUrl = uploaded.url;
+    setMainLoading(false);
+    setMainUrl(uploaded.url);
   };
 
   const onSubFileChange = async (event) => {
     const length = Object.keys(event.target.files).length;
+    const url = {};
+    setSubLoading(true);
     for (let i = 0; i < length; i++) {
       const uploaded = await imageUploader.upload(event.target.files[i]);
-      subUrl[i] = uploaded.url;
-      console.log(subUrl);
+      url[i] = uploaded.url;
     }
+    setSubLoading(false);
+    setSubUrl(url);
   };
 
   return (
     <section className={styles.section}>
       <Main_header />
+      {(mainLoading || subLoading) && (
+        <div className={styles.loding}>
+          <div>
+            <FontAwesomeIcon icon={faSpinner} />
+          </div>
+        </div>
+      )}
       <form className={styles.editor}>
         <div className={styles.info}>
           <div className={styles.mainTitle}>본식 날짜</div>

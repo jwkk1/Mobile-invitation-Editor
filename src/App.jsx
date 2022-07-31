@@ -23,7 +23,7 @@ function App({ imageUploader, authService, kakao, database }) {
             }
           />
           <Route
-            path="/share"
+            path="/:username/share"
             element={<Share kakao={kakao} database={database} />}
           />
         </Routes>

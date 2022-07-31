@@ -5,6 +5,22 @@
   align-items: center;
 }
 
+.loding {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+  opacity: 0.5;
+  font-size: 5em;
+}
+
+.loding div {
+  animation: spin 1s linear infinite;
+}
+
 .editor {
   width: 50%;
   display: flex;
@@ -36,4 +52,13 @@
 
 .textInput:focus {
   outline: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
