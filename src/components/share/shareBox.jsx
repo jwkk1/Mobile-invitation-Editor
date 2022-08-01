@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./shareBox.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Comment from "./comment";
 import ImageSlider from "./imageSlider";
 import KakaoMap from "./kakaoMap";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const ShareBox = ({ database, card, onSubmit }) => {
   const {
@@ -72,9 +74,13 @@ const ShareBox = ({ database, card, onSubmit }) => {
     });
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <section className={styles.section}>
-      <div className={styles.mainTitle}>
+      <div data-aos="fade-up" className={styles.mainTitle}>
         <div className={styles.mainTitleDiv}>{maleName}</div>
         <div className={styles.mainTitleDiv}>
           <div>{month}</div>
@@ -83,17 +89,17 @@ const ShareBox = ({ database, card, onSubmit }) => {
         </div>
         <div className={styles.mainTitleDiv}>{femaleName}</div>
       </div>
-      <div className={styles.img}>
+      <div data-aos="fade-up" className={styles.img}>
         <img src={mainPhoto || defaultPhoto} />
       </div>
-      <div className={styles.info}>
+      <div data-aos="fade-up" className={styles.info}>
         <div>{`${year}년 ${month}월 ${day}일`}</div>
         <div>{weddingHallName}</div>
       </div>
-      <div className={styles.img}>
+      <div data-aos="fade-up" className={styles.img}>
         <ImageSlider img={gallary} />
       </div>
-      <div className={styles.info}>
+      <div data-aos="fade-up" className={styles.info}>
         <img src="../image/flower.png" />
         <div>마음 전하실 곳</div>
         <div>
@@ -101,6 +107,7 @@ const ShareBox = ({ database, card, onSubmit }) => {
           축하의 마음을 전달해 주세요.
         </div>
         <div
+          data-aos="fade-up"
           className={styles.menu}
           onClick={() => {
             setMenuOpen(!menuOpen);
@@ -126,6 +133,7 @@ const ShareBox = ({ database, card, onSubmit }) => {
           </div>
         </div>
         <div
+          data-aos="fade-up"
           className={styles.menu}
           onClick={() => {
             setFemaleMenuOpen(!femaleMenuOpen);
@@ -153,11 +161,15 @@ const ShareBox = ({ database, card, onSubmit }) => {
           </div>
         </div>
       </div>
-      <div className={styles.info}>
-        <div>{weddingHallName}</div>
-        <KakaoMap address={weddingHallAddress} name={weddingHallName} />
+      <div data-aos="fade-up" className={styles.info}>
+        <div data-aos="fade-up">{weddingHallName}</div>
+        <KakaoMap
+          data-aos="fade-up"
+          address={weddingHallAddress}
+          name={weddingHallName}
+        />
       </div>
-      <div className={styles.info}>
+      <div data-aos="fade-up" className={styles.info}>
         <div>댓글 남기기</div>
         <form ref={formRef} className={styles.board}>
           <input
@@ -172,13 +184,15 @@ const ShareBox = ({ database, card, onSubmit }) => {
             className={styles.commentValue}
             placeholder="내용"
           ></input>
-          <button onClick={onCommentClick}>작성</button>
+          <button className={styles.commentBtn} onClick={onCommentClick}>
+            작성
+          </button>
         </form>
       </div>
-      <div className={styles.info}>
+      <div data-aos="fade-up" className={styles.info}>
         <Comment card={card} />
       </div>
-      <div className={styles.info}>
+      <div data-aos="fade-up" className={styles.info}>
         <div className={styles.shareBtn} onClick={shareKakao}>
           카카오톡 공유하기
           <img src="../image/kakao_btn.png" />

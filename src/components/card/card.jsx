@@ -15,7 +15,7 @@ const Card = ({ card, onAdd, user }) => {
       <li className={styles.container}>
         <div className={styles.list} onClick={onCardClick}>
           <img src="./image/thumb.png" className={styles.thumbnail}></img>
-          <p>a</p>
+          <p>Template No.1</p>
         </div>
       </li>
     </>

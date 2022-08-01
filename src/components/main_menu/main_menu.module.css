@@ -7,12 +7,21 @@
   justify-content: center;
 }
 
-.logoutbtn {
+.userContainer {
   position: absolute;
-  top: 2em;
-  right: 3em;
-  border: 0;
-  padding: 0.5em;
-  background-color: paleturquoise;
+  display: flex;
+  font-size: 0.8em;
+  top: 1em;
+  right: 1em;
+}
+
+.logoutbtn {
+  border-left: 1px solid gray;
+  padding: 0 0.5em;
+  background-color: inherit;
   cursor: pointer;
+}
+
+.userId {
+  padding: 0 0.5em;
 }

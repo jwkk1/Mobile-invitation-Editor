@@ -119,6 +119,11 @@ input:focus {
   transition: all 400ms ease-in;
 }
 
+.commentBtn {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 .shareBtn {
   width: 10em;
   text-align: center;

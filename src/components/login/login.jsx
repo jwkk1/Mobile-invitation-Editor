@@ -7,23 +7,28 @@ import { Route, useNavigate } from "react-router-dom";
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  const goMainMenu = (userId) => {
-    navigate("/main", { state: { user: userId } });
+  const goMainMenu = (userId, email) => {
+    navigate("/main", {
+      state: {
+        user: userId,
+        email: email,
+      },
+    });
+    console.log(email);
   };
 
   const onLogin = () => {
     authService //
       .login()
-      .then((data) => goMainMenu(data.user.uid));
+      .then((data) => goMainMenu(data.user.uid, data.user.email));
   };
 
   useEffect(() => {
     authService //
       .onAuthChange((user) => {
-        user && goMainMenu(user.uid);
+        user && goMainMenu(user.uid, user.email);
       });
   });
-
   return (
     <section className={styles.login}>
       <Login_header />

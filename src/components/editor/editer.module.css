@@ -22,7 +22,7 @@
 }
 
 .editor {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   margin-top: 2em;
@@ -41,6 +41,11 @@
   text-align: left;
   width: 6em;
   margin: 0.5em 2em;
+  flex: 1;
+}
+
+.subTitle {
+  flex: 3;
 }
 
 .list {
@@ -64,6 +69,7 @@
 
 .textInput:focus {
   outline: none;
+  border-bottom: 1px solid lightskyblue;
 }
 
 .btn {
@@ -77,6 +83,8 @@
   border: 1px solid lightgray;
   border-radius: 0.5em;
   cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3em;
 }
 
 @keyframes spin {

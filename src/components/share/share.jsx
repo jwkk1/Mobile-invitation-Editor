@@ -34,7 +34,7 @@ const Share = ({ database }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
   const onSubmit = (card) => {
     setCard(card);

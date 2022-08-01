@@ -10,42 +10,6 @@ const Main_menu = ({ authService }) => {
   const location = useLocation();
   const user = location.state.user;
 
-  //   const [cards, setCard] = useState({
-  //     1: {
-  //       date: "09/01",
-  //       maleName: "김진우",
-  //       pemailName: "정누리",
-  //       gallary: ["url", "url"],
-  //       address: "약현",
-  //       malePhone: "010-2900-1006",
-  //       pemalePhone: "010-3386-0296",
-  //       maleBank: "1002-250",
-  //       pemaleBank: "1002-222",
-  //     },
-  //     2: {
-  //       date: "09/01",
-  //       maleName: "김진우2",
-  //       pemailName: "정누리2",
-  //       gallary: ["url", "url"],
-  //       address: "약현",
-  //       malePhone: "010-2900-1006",
-  //       pemalePhone: "010-3386-0296",
-  //       maleBank: "1002-250",
-  //       pemaleBank: "1002-222",
-  //     },
-  //     3: {
-  //       date: "09/01",
-  //       maleName: "김진우3",
-  //       pemailName: "정누리3",
-  //       gallary: ["url", "url"],
-  //       address: "약현",
-  //       malePhone: "010-2900-1006",
-  //       pemalePhone: "010-3386-0296",
-  //       maleBank: "1002-250",
-  //       pemaleBank: "1002-222",
-  //     },
-  //   });
-
   const onLogout = () => {
     authService.logout();
   };
@@ -61,9 +25,15 @@ const Main_menu = ({ authService }) => {
   return (
     <section className={styles.section}>
       <Main_header />
-      <button className={styles.logoutbtn} onClick={onLogout}>
-        Logout
-      </button>
+      <div className={styles.userContainer}>
+        <div className={styles.userId} onClick={onLogout}>
+          {location.state.email}
+        </div>
+        <div className={styles.logoutbtn} onClick={onLogout}>
+          Logout
+        </div>
+      </div>
+
       <div className={styles.container}>
         <Preview user={user} />
       </div>

@@ -84,7 +84,7 @@ const Editor = ({ imageUploader, database }) => {
       <form className={styles.editor}>
         <div className={styles.info}>
           <div className={styles.mainTitle}>본식 날짜</div>
-          <div>
+          <div className={styles.subTitle}>
             <input
               ref={dateRef}
               className={styles.input}
@@ -95,7 +95,7 @@ const Editor = ({ imageUploader, database }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.mainTitle}>메인 사진 </div>
-          <div>
+          <div className={styles.subTitle}>
             <input
               className={styles.imginput}
               type="file"
@@ -194,7 +194,7 @@ const Editor = ({ imageUploader, database }) => {
         </div>
         <div className={styles.info}>
           <div className={styles.mainTitle}>갤러리 사진</div>
-          <div>
+          <div className={styles.subTitle}>
             <input
               ref={gallaryRef}
               multiple
