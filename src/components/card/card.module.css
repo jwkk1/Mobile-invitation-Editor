@@ -5,7 +5,7 @@
 }
 
 .list {
-  transition: all 200ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .thumbnail {
@@ -13,5 +13,5 @@
   border-radius: 0.5em;
 }
 .list:hover {
-  transform: scale(1.1);
+  transform: translateY(-0.8em);
 }
