@@ -4,6 +4,7 @@ import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import Main_header from "./main_header";
 import styles from "./main_menu.module.css";
+import Main_middle from "./main_middle";
 
 const Main_menu = ({ authService }) => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Main_menu = ({ authService }) => {
           Logout
         </div>
       </div>
-
+      <Main_middle />
       <div className={styles.container}>
         <Preview user={user} />
       </div>

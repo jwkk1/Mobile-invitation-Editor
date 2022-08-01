@@ -1,0 +1,31 @@
+.middle {
+  width: 100%;
+  height: 12em;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  font-size: 2.5em;
+  margin: 0;
+  top: 20%;
+  left: 10%;
+  font-family: "Noto Sans KR", sans-serif;
+  color: gray;
+}
+
+.name {
+  position: absolute;
+  font-size: 3em;
+  margin: 0;
+  top: 50%;
+  left: 10%;
+  font-family: "Noto Sans KR", sans-serif;
+  color: white;
+}
+
+.middleImg {
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+}
