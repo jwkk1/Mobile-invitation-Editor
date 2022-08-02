@@ -16,9 +16,7 @@
   4. FireBase
   5. PostCSS
 
-## </br>
-
-## 완성된 페이지
+## 웹 페이지
 
 #### 1. 메인로그인 화면
 
@@ -34,8 +32,10 @@
 
 #### 4. 공유될 모바일 청첩장 미리보기
 
-![모바일 청첩장](images/share.png)
+![모바일 청첩장](images/sharemain.gif)
+
+![모바일 청첩장](images/photo.gif)
 
 #### 5. 모바일 청첩장 공유
 
-![모바일 청첩장 공유](images/share.png)
+![모바일 청첩장 공유](images/sharekakao.gif)
