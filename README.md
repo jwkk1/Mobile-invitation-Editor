@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+  <h1> 모바일 청첩장 만들기 Project </br> https://mobile-invitation.netlify.app/</h1>
+  
+## 주요 기능 
+  1. 모바일 청첩장 템플릿을 선택하여 커스터마이징
+  2. 커스터마이징된 기본 정보는 Firebase RealTimeDB로 실시간 동기화
+  3. 카카오SDK 카카오맵, 카카오톡 공유하기 기능 구현
+  4. Cloudinary 이미지 데이터 처리
+  5. FireBase authentication 기능 구현(구글 로그인)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</br>
+  
+## 활용 기술
+  1. html
+  2. css
+  3. React.js
+  4. FireBase
+  5. PostCSS
 
-## Available Scripts
+## </br>
 
-In the project directory, you can run:
+## 완성된 페이지
 
-### `yarn start`
+#### 1. 메인로그인 화면
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![로그인 화면](images/main.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### 2. 템플릿 고르기
 
-### `yarn test`
+![템플릿 고르기](images/select.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 3. 기본 정보 입력
 
-### `yarn build`
+![기본 정보 입력](images/input.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 4. 공유될 모바일 청첩장 미리보기
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![모바일 청첩장](images/share.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 5. 모바일 청첩장 공유
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![모바일 청첩장 공유](images/share.png)
