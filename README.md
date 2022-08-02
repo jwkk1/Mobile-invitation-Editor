@@ -20,22 +20,22 @@
 
 #### 1. 메인로그인 화면
 
-![로그인 화면](../public/image/main.png)
+![로그인 화면](../main/public/image/main.png)
 
 #### 2. 템플릿 고르기
 
-![템플릿 고르기](../public/image/select.png)
+![템플릿 고르기](../main/public/image/select.png)
 
 #### 3. 기본 정보 입력
 
-![기본 정보 입력](../public/image/input.png)
+![기본 정보 입력](../main/public/image/input.png)
 
 #### 4. 공유될 모바일 청첩장 미리보기
 
-![모바일 청첩장](../public/image/sharemain.gif)
+![모바일 청첩장](../main/public/image/sharemain.gif)
 
-![모바일 청첩장](../public/image/photo.gif)
+![모바일 청첩장](../main/public/image/photo.gif)
 
 #### 5. 모바일 청첩장 공유
 
-![모바일 청첩장 공유](../public/image/sharekakao.gif)
+![모바일 청첩장 공유](../main/public/image/sharekakao.gif)
