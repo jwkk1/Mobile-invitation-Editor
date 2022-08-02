@@ -17,7 +17,7 @@ input:focus {
   border: 1px solid black;
   width: 420px;
   background-color: #f3f3f3;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .mainTitle {
@@ -96,7 +96,7 @@ input:focus {
   border-radius: 0.5em;
   cursor: pointer;
   transition: all 200ms;
-  font-family: "Noto Serif KR", serif;
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .bankBtn button:hover {

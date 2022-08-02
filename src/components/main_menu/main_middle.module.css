@@ -29,3 +29,12 @@
   height: 100%;
   object-fit: none;
 }
+
+@media screen and (max-width: 780px) {
+  .title {
+    font-size: 2em;
+  }
+  .name {
+    font-size: 2.5em;
+  }
+}

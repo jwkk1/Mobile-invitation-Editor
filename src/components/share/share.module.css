@@ -1,3 +1,14 @@
+.section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section::-webkit-scrollbar {
+  display: none;
+}
+
 .loding {
   position: absolute;
   display: flex;

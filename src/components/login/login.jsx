@@ -14,7 +14,6 @@ const Login = ({ authService }) => {
         email: email,
       },
     });
-    console.log(email);
   };
 
   const onLogin = () => {

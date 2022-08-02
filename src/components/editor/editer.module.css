@@ -45,11 +45,15 @@
 }
 
 .subTitle {
-  flex: 3;
+  flex: 2;
 }
 
 .list {
   margin: 0.7em 0em;
+}
+
+.imginput {
+  width: 100%;
 }
 
 .input {

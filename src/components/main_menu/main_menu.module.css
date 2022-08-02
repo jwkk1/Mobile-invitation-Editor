@@ -25,3 +25,9 @@
 .userId {
   padding: 0 0.5em;
 }
+
+@media screen and (max-width: 780px) {
+  .userContainer {
+    position: static;
+  }
+}

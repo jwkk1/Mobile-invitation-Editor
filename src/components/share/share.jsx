@@ -12,7 +12,7 @@ const Share = ({ database }) => {
     mainPhoto: "default",
     maleName: "default",
     femaleName: "default",
-    weddingHallAddress: "default",
+    weddingHallAddress: "용산구 백범로 99길 40",
     weddingHallName: "default",
     gallary: "default",
     maleBank: "default",
@@ -27,7 +27,6 @@ const Share = ({ database }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(card);
     database.syncData(webId, (card) => setCard(card));
   }, []);
 
@@ -41,7 +40,7 @@ const Share = ({ database }) => {
   };
 
   return (
-    <>
+    <section className={styles.section}>
       {loading && (
         <div className={styles.loding}>
           <div>
@@ -52,7 +51,7 @@ const Share = ({ database }) => {
       {!loading && (
         <ShareBox card={card} onSubmit={onSubmit} database={database} />
       )}
-    </>
+    </section>
   );
 };
 

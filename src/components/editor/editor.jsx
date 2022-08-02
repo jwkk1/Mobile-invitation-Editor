@@ -44,7 +44,6 @@ const Editor = ({ imageUploader, database }) => {
         1: { id: Date.now(), name: "이름", value: "안녕" },
       },
     };
-    console.log(card);
     database.addCard(userId, card);
 
     navigate(`/${userId}/share`, { state: { cards: card } });
@@ -94,7 +93,7 @@ const Editor = ({ imageUploader, database }) => {
           </div>
         </div>
         <div className={styles.info}>
-          <div className={styles.mainTitle}>메인 사진 </div>
+          <div className={styles.mainTitle}>메인사진</div>
           <div className={styles.subTitle}>
             <input
               className={styles.imginput}

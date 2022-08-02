@@ -25,7 +25,6 @@ const Main_menu = ({ authService }) => {
 
   return (
     <section className={styles.section}>
-      <Main_header />
       <div className={styles.userContainer}>
         <div className={styles.userId} onClick={onLogout}>
           {location.state.email}
@@ -34,6 +33,7 @@ const Main_menu = ({ authService }) => {
           Logout
         </div>
       </div>
+      <Main_header />
       <Main_middle />
       <div className={styles.container}>
         <Preview user={user} />

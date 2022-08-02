@@ -33,24 +33,15 @@ const ShareBox = ({ database, card, onSubmit }) => {
   const [femaleMenuOpen, setFemaleMenuOpen] = useState(false);
 
   const shareKakao = () => {
-    window.Kakao.Link.sendDefault({
-      objectType: "feed",
-      content: {
-        title: "모바일 청첩장",
-        description: `${maleName}❤️${femaleName} 모바일 청첩장이 도착하였습니다`,
-        imageUrl: mainPhoto,
-        link: {
-          mobileWebUrl: `${window.location.href}`,
-        },
+    window.Kakao.Link.sendCustom({
+      templateId: 80535,
+      templateArgs: {
+        domain: window.location.origin,
+        path: window.location.pathname.replace("/", ""),
+        mainPhoto: mainPhoto,
+        maleName: maleName,
+        femaleName: femaleName,
       },
-      buttons: [
-        {
-          title: "웹으로 이동",
-          link: {
-            mobileWebUrl: `${window.location.href}`,
-          },
-        },
-      ],
     });
   };
 
@@ -124,7 +115,14 @@ const ShareBox = ({ database, card, onSubmit }) => {
             <p>{maleName}</p>
           </div>
           <div className={styles.bankBtn}>
-            <button>송금하기</button>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(femaleBank);
+                alert("복사되었습니다.");
+              }}
+            >
+              복사하기
+            </button>
             <button>
               <a className={styles.phone} href={`tel:${malePhone}`}>
                 전화하기
@@ -152,7 +150,14 @@ const ShareBox = ({ database, card, onSubmit }) => {
             <p>{femaleName}</p>
           </div>
           <div className={styles.bankBtn}>
-            <button>송금하기</button>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(femaleBank);
+                alert("복사되었습니다.");
+              }}
+            >
+              복사하기
+            </button>
             <button>
               <a className={styles.phone} href={`tel:${femalePhone}`}>
                 전화하기
